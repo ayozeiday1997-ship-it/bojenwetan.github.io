@@ -127,6 +127,28 @@
             <li>Surat Keterangan Tidak Mampu (SKTM)</li>
             <li>Surat Keterangan Usaha</li>
         </ul>
+        <div class="card">
+    <h2>Form Pengajuan Surat</h2>
+
+    <label>Nama Lengkap</label><br>
+    <input type="text" id="nama" placeholder="Nama Lengkap"><br><br>
+
+    <label>NIK</label><br>
+    <input type="text" id="nik" placeholder="NIK"><br><br>
+
+    <label>Alamat</label><br>
+    <input type="text" id="alamat" placeholder="Alamat"><br><br>
+
+    <label>Jenis Surat</label><br>
+    <select id="surat">
+        <option value="Domisili">Surat Domisili</option>
+        <option value="SKTM">SKTM</option>
+        <option value="Usaha">Surat Usaha</option>
+    </select><br><br>
+
+    <button onclick="kirimWA()">📤 Kirim via WhatsApp</button>
+</div>
+
     </div>
 </div>
 
@@ -170,6 +192,26 @@
         pages.forEach(page => page.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
     }
+</script>
+<script>
+function kirimWA() {
+    const nama = document.getElementById("nama").value;
+    const nik = document.getElementById("nik").value;
+    const alamat = document.getElementById("alamat").value;
+    const surat = document.getElementById("surat").value;
+
+    if (!nama || !nik || !alamat) {
+        alert("Mohon lengkapi data");
+        return;
+    }
+
+    const pesan = `ORDER SURAT\nNama: ${nama}\nNIK: ${nik}\nAlamat: ${alamat}\nJenis Surat: ${surat}`;
+
+    const nomorBot = "6289XXXXXXXXX"; // GANTI NOMOR BOT
+    const url = `https://wa.me/${nomorBot}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(url, "_blank");
+}
 </script>
 
 </body>

@@ -146,11 +146,12 @@
         <option value="Usaha">Surat Usaha</option>
     </select><br><br>
 
-    <p style="font-size:14px;color:#555;">
-        📎 Setelah klik kirim, silakan upload:
-        <br>• Foto KTP
-        <br>• Foto Kartu Keluarga
-    </p>
+   <p style="font-size:14px;color:#555;">
+            📎 Setelah klik kirim, WhatsApp akan terbuka.<br>
+            Silakan upload:
+            <br>• Foto KTP
+            <br>• Foto Kartu Keluarga
+        </p>
 
     <button onclick="kirimWA()">📤 Kirim & Upload via WhatsApp</button>
 </div>
@@ -200,10 +201,11 @@
     }
 </script>
 <script>
+<script>
 function kirimWA() {
-    const nama = document.getElementById("nama").value;
-    const nik = document.getElementById("nik").value;
-    const alamat = document.getElementById("alamat").value;
+    const nama = document.getElementById("nama").value.trim();
+    const nik = document.getElementById("nik").value.trim();
+    const alamat = document.getElementById("alamat").value.trim();
     const surat = document.getElementById("surat").value;
 
     if (!nama || !nik || !alamat) {
@@ -211,14 +213,20 @@ function kirimWA() {
         return;
     }
 
-    const pesan = `ORDER SURAT\nNama: ${nama}\nNIK: ${nik}\nAlamat: ${alamat}\nJenis Surat: ${surat}`;
+    const pesan =
+`PENGAJUAN SURAT
+Nama: ${nama}
+NIK: ****${nik}
+Alamat: ${alamat}
+Jenis Surat: ${surat}`;
 
-    const nomorBot = "6283177390009"; // GANTI NOMOR BOT
+    const nomorBot = "6283177390009"; // NOMOR BOT DESA
     const url = `https://wa.me/${nomorBot}?text=${encodeURIComponent(pesan)}`;
 
     window.open(url, "_blank");
 }
 </script>
+
 
 </body>
 </html>

@@ -127,37 +127,39 @@
             <li>Surat Domisili</li>
             <li>Surat Keterangan Tidak Mampu (SKTM)</li>
             <li>Surat Keterangan Usaha</li>
-            <div class="card">
-    <h2>Form Pengajuan Surat</h2>
+        </ul>
+    </div>
 
-    <label>Nama Lengkap</label><br>
-    <input type="text" id="nama" placeholder="Nama Lengkap"><br><br>
+    <div class="card">
+        <h2>Form Pengajuan Surat</h2>
 
-    <label>NIK</label><br>
-    <input type="text" id="nik" placeholder="NIK"><br><br>
+        <label>Nama Lengkap</label><br>
+        <input type="text" id="nama" placeholder="Nama Lengkap"><br><br>
 
-    <label>Alamat</label><br>
-    <input type="text" id="alamat" placeholder="Alamat"><br><br>
+        <label>NIK (4 digit terakhir)</label><br>
+        <input type="text" id="nik" placeholder="Contoh: 1234"><br><br>
 
-    <label>Jenis Surat</label><br>
-    <select id="surat">
-        <option value="Domisili">Surat Domisili</option>
-        <option value="SKTM">SKTM</option>
-        <option value="Usaha">Surat Usaha</option>
-    </select><br><br>
+        <label>Alamat</label><br>
+        <input type="text" id="alamat" placeholder="RT/RW"><br><br>
 
-   <p style="font-size:14px;color:#555;">
+        <label>Jenis Surat</label><br>
+        <select id="surat">
+            <option>Surat Domisili</option>
+            <option>SKTM</option>
+            <option>Surat Usaha</option>
+        </select><br><br>
+
+        <p style="font-size:14px;color:#555;">
             📎 Setelah klik kirim, WhatsApp akan terbuka.<br>
             Silakan upload:
             <br>• Foto KTP
             <br>• Foto Kartu Keluarga
         </p>
 
-    <button onclick="kirimWA()">📤 Kirim & Upload via WhatsApp</button>
-</div>
-        </ul>
+        <button onclick="kirimWA()">📤 Kirim & Upload via WhatsApp</button>
     </div>
 </div>
+
 
 <!-- GALERI -->
 <div id="galeri" class="content">

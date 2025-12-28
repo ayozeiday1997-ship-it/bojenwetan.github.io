@@ -1,25 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Website Resmi Desa</title>
+    <title>Desa Bojonwetan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+        }
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav button {
+            border: none;
+            background: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background: #f0f0f0;
+        }
+        .content {
+            padding: 20px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .wa-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Website Resmi Desa</h1>
-    <p>Informasi & Layanan Publik Desa</p>
 
-    <h2>Layanan Desa</h2>
-    <ul>
-        <li>Surat Domisili</li>
-        <li>SKTM</li>
-        <li>Surat Usaha</li>
-    </ul>
+<header>
+    <h1>Website Resmi Desa Bojonwetan</h1>
+    <p>Layanan Informasi & Surat Desa</p>
+</header>
 
-    <h2>Pengajuan Surat</h2>
-    <p>Via WhatsApp: <b>08xxxxxxxxxx</b></p>
+<nav>
+    <button onclick="showPage('home')">Beranda</button>
+    <button onclick="showPage('layanan')">Layanan</button>
+    <button onclick="showPage('alur')">Alur Surat</button>
+    <button onclick="showPage('kontak')">Kontak</button>
+</nav>
 
-    <h2>Jam Pelayanan</h2>
-    <p>Senin – Jumat | 08.00 – 14.00</p>
+<div id="home" class="content active">
+    <div class="card">
+        <h2>Selamat Datang</h2>
+        <p>Website ini digunakan untuk memberikan informasi dan layanan publik Desa Bojonwetan.</p>
+    </div>
+</div>
+
+<div id="layanan" class="content">
+    <div class="card">
+        <h2>Layanan Surat</h2>
+        <ul>
+            <li>Surat Domisili</li>
+            <li>Surat Keterangan Tidak Mampu (SKTM)</li>
+            <li>Surat Keterangan Usaha</li>
+        </ul>
+    </div>
+</div>
+
+<div id="alur" class="content">
+    <div class="card">
+        <h2>Alur Pengajuan Surat</h2>
+        <ol>
+            <li>Hubungi WhatsApp Desa</li>
+            <li>Pilih jenis surat</li>
+            <li>Kirim data sesuai format</li>
+            <li>Tunggu konfirmasi</li>
+            <li>Ambil surat di kantor desa</li>
+        </ol>
+    </div>
+</div>
+
+<div id="kontak" class="content">
+    <div class="card">
+        <h2>Kontak Desa</h2>
+        <p>WhatsApp Layanan Desa:</p>
+        <a class="wa-btn" href="https://wa.me/6281234567890" target="_blank">
+            💬 Chat WhatsApp
+        </a>
+        <p style="margin-top:10px;">Jam Pelayanan:<br>Senin – Jumat | 08.00 – 14.00</p>
+    </div>
+</div>
+
+<footer>
+    © 2025 Desa Bojonwetan
+</footer>
+
+<script>
+    function showPage(pageId) {
+        const pages = document.querySelectorAll('.content');
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+    }
+</script>
+
 </body>
 </html>
+

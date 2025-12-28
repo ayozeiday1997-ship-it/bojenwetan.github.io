@@ -49,4 +49,171 @@ nav button.active{
 
 /* CONTENT */
 .content{display:none;padding:20px;}
-.content.active{display:b
+.content.active{display:block;}
+
+.card{
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+/* PROFIL DESA */
+.profil-grid{
+    display:grid;
+    gap:15px;
+}
+.profil-box{
+    border-left:5px solid #0b5ed7;
+    padding:15px;
+    background:#fff;
+    border-radius:6px;
+}
+.profil-box h3{
+    margin-top:0;
+    color:#0b5ed7;
+}
+
+/* GALERI */
+.galeri{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+}
+.galeri img{
+    width:100%;
+    border-radius:8px;
+}
+
+/* BUTTON */
+button.action{
+    width:100%;
+    padding:12px;
+    background:#198754;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:10px;
+    font-size:13px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Website Resmi Desa Bojenwetan</h1>
+<p>Informasi, Berita & Layanan Publik Desa</p>
+</header>
+
+<nav>
+<button onclick="showPage('profil',this)" class="active">Profil Desa</button>
+<button onclick="showPage('berita',this)">Berita</button>
+<button onclick="showPage('layanan',this)">Layanan</button>
+<button onclick="showPage('galeri',this)">Galeri</button>
+<button onclick="showPage('kontak',this)">Kontak</button>
+</nav>
+
+<!-- PROFIL -->
+<div id="profil" class="content active">
+<div class="card">
+<h2>Profil Desa</h2>
+<div class="profil-grid">
+
+<div class="profil-box">
+<h3>Gambaran Umum</h3>
+<p>Desa Bojenwetan menjunjung nilai gotong royong dan pelayanan publik berbasis digital.</p>
+</div>
+
+<div class="profil-box">
+<h3>Visi</h3>
+<p>Terwujudnya Desa Bojenwetan yang maju, mandiri dan sejahtera.</p>
+</div>
+
+<div class="profil-box">
+<h3>Misi</h3>
+<ol>
+<li>Peningkatan pelayanan publik</li>
+<li>Transparansi pemerintahan</li>
+<li>Digitalisasi desa</li>
+</ol>
+</div>
+
+<div class="profil-box">
+<h3>Struktur Organisasi</h3>
+<p>Kepala Desa, Sekretaris, Kaur Pemerintahan, Kaur Keuangan, Kepala Dusun</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- BERITA -->
+<div id="berita" class="content">
+<div class="card">
+<h3>Kerja Bakti Warga</h3>
+<small>12 Januari 2025</small>
+<p>Warga melaksanakan kerja bakti lingkungan.</p>
+</div>
+</div>
+
+<!-- LAYANAN -->
+<div id="layanan" class="content">
+<div class="card">
+<h3>Form Pengajuan Surat</h3>
+<input id="nama" placeholder="Nama Lengkap"><br><br>
+<input id="nik" placeholder="4 digit NIK"><br><br>
+<input id="alamat" placeholder="RT/RW"><br><br>
+<select id="surat">
+<option>Surat Domisili</option>
+<option>SKTM</option>
+<option>Surat Usaha</option>
+</select><br><br>
+<button class="action" onclick="kirimWA()">Kirim via WhatsApp</button>
+</div>
+</div>
+
+<!-- GALERI -->
+<div id="galeri" class="content">
+<div class="card">
+<h3>Galeri Desa</h3>
+<div class="galeri">
+<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300">
+</div>
+</div>
+</div>
+
+<!-- KONTAK -->
+<div id="kontak" class="content">
+<div class="card">
+<h3>Kontak Desa</h3>
+<a href="https://wa.me/6283177390009" target="_blank">Chat WhatsApp Desa</a>
+</div>
+</div>
+
+<footer>© 2025 Desa Bojenwetan</footer>
+
+<script>
+function showPage(id,btn){
+document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+}
+
+function kirimWA(){
+let pesan=`Pengajuan Surat\nNama:${nama.value}\nNIK:${nik.value}\nAlamat:${alamat.value}\nSurat:${surat.value}`;
+window.open("https://wa.me/6283177390009?text="+encodeURIComponent(pesan));
+}
+</script>
+
+</body>
+</html>

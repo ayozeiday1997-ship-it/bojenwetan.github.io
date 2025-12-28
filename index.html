@@ -2,106 +2,111 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Desa Bojenwetan</title>
+<title>Pemerintah Desa Bojenwetan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f4f6f8;
+:root{
+    --utama:#0b5ed7;
+    --sekunder:#084298;
+    --bg:#f4f6f8;
 }
 
-/* HEADER */
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+}
+
 header{
-    background:#0b5ed7;
+    background:linear-gradient(135deg,var(--utama),var(--sekunder));
     color:#fff;
-    padding:20px 10px;
+    padding:25px 15px;
     text-align:center;
 }
 
-/* MENU PEMDA */
+header h1{margin:0;font-size:22px;}
+header p{margin-top:6px;font-size:14px;}
+
 nav{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    background:#ffffff;
-    box-shadow:0 3px 6px rgba(0,0,0,0.15);
+    background:#fff;
+    box-shadow:0 2px 6px rgba(0,0,0,.15);
     position:sticky;
     top:0;
     z-index:1000;
 }
+
 nav button{
     border:none;
     background:none;
-    padding:14px 16px;
+    padding:14px 18px;
     font-size:14px;
     font-weight:600;
-    color:#0b5ed7;
     cursor:pointer;
-}
-nav button:hover,
-nav button.active{
-    background:#0b5ed7;
-    color:#fff;
-    border-radius:6px;
+    color:#333;
 }
 
-/* CONTENT */
-.content{display:none;padding:20px;}
+nav button:hover,
+nav button.active{
+    color:var(--utama);
+    border-bottom:3px solid var(--utama);
+}
+
+.content{
+    display:none;
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
 .content.active{display:block;}
 
 .card{
     background:#fff;
-    padding:15px;
-    border-radius:8px;
-    margin-bottom:15px;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:18px;
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
 }
 
-/* PROFIL DESA */
-.profil-grid{
+.grid{
     display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:15px;
 }
-.profil-box{
-    border-left:5px solid #0b5ed7;
-    padding:15px;
-    background:#fff;
-    border-radius:6px;
-}
-.profil-box h3{
-    margin-top:0;
-    color:#0b5ed7;
+
+button.wa{
+    background:#25d366;
+    color:#fff;
+    padding:12px;
+    width:100%;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
 }
 
-/* GALERI */
+button.wa:hover{background:#1ebe5d;}
+
 .galeri{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     gap:10px;
 }
+
 .galeri img{
     width:100%;
     border-radius:8px;
 }
 
-/* BUTTON */
-button.action{
-    width:100%;
-    padding:12px;
-    background:#198754;
-    color:#fff;
-    border:none;
-    border-radius:6px;
-    font-size:15px;
-}
-
-/* FOOTER */
 footer{
     text-align:center;
-    padding:10px;
+    padding:15px;
     font-size:13px;
-    color:#777;
+    color:#666;
 }
 </style>
 </head>
@@ -109,49 +114,81 @@ footer{
 <body>
 
 <header>
-<h1>Website Resmi Desa Bojenwetan</h1>
-<p>Informasi, Berita & Layanan Publik Desa</p>
+<h1>PEMERINTAH DESA BOJENWETAN</h1>
+<p>Kabupaten … | Provinsi …</p>
 </header>
 
 <nav>
-<button onclick="showPage('profil',this)" class="active">Profil Desa</button>
+<button class="active" onclick="showPage('home',this)">Beranda</button>
+<button onclick="showPage('profil',this)">Profil Desa</button>
+<button onclick="showPage('pemerintahan',this)">Pemerintahan</button>
 <button onclick="showPage('berita',this)">Berita</button>
 <button onclick="showPage('layanan',this)">Layanan</button>
 <button onclick="showPage('galeri',this)">Galeri</button>
 <button onclick="showPage('kontak',this)">Kontak</button>
 </nav>
 
+<!-- BERANDA -->
+<div id="home" class="content active">
+<div class="card">
+<h2>Selamat Datang</h2>
+<p>Website resmi Pemerintah Desa Bojenwetan sebagai sarana informasi dan pelayanan publik.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<h3>Sambutan Kepala Desa</h3>
+<p>Website ini menjadi media transparansi dan pelayanan masyarakat Desa Bojenwetan.</p>
+</div>
+
+<div class="card">
+<h3>Data Singkat Desa</h3>
+<ul>
+<li>Penduduk: ±3.200 Jiwa</li>
+<li>Jumlah KK: ±1.000</li>
+<li>Luas Wilayah: ±215 Ha</li>
+</ul>
+</div>
+</div>
+</div>
+
 <!-- PROFIL -->
-<div id="profil" class="content active">
+<div id="profil" class="content">
 <div class="card">
 <h2>Profil Desa</h2>
-<div class="profil-grid">
-
-<div class="profil-box">
-<h3>Gambaran Umum</h3>
-<p>Desa Bojenwetan menjunjung nilai gotong royong dan pelayanan publik berbasis digital.</p>
+<div class="grid">
+<div>
+<h4>Gambaran Umum</h4>
+<p>Desa Bojenwetan merupakan desa yang menjunjung nilai gotong royong.</p>
 </div>
-
-<div class="profil-box">
-<h3>Visi</h3>
-<p>Terwujudnya Desa Bojenwetan yang maju, mandiri dan sejahtera.</p>
+<div>
+<h4>Visi</h4>
+<p>Mewujudkan desa maju, mandiri, dan sejahtera.</p>
 </div>
-
-<div class="profil-box">
-<h3>Misi</h3>
-<ol>
+<div>
+<h4>Misi</h4>
+<ul>
 <li>Peningkatan pelayanan publik</li>
 <li>Transparansi pemerintahan</li>
-<li>Digitalisasi desa</li>
-</ol>
+<li>Pemanfaatan teknologi</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
-<div class="profil-box">
-<h3>Struktur Organisasi</h3>
-<p>Kepala Desa, Sekretaris, Kaur Pemerintahan, Kaur Keuangan, Kepala Dusun</p>
-</div>
-
-</div>
+<!-- PEMERINTAHAN -->
+<div id="pemerintahan" class="content">
+<div class="card">
+<h2>Struktur Pemerintahan Desa</h2>
+<ul>
+<li>Kepala Desa</li>
+<li>Sekretaris Desa</li>
+<li>Kaur Pemerintahan</li>
+<li>Kaur Keuangan</li>
+<li>Kaur Umum</li>
+<li>Kepala Dusun</li>
+</ul>
 </div>
 </div>
 
@@ -160,33 +197,45 @@ footer{
 <div class="card">
 <h3>Kerja Bakti Warga</h3>
 <small>12 Januari 2025</small>
-<p>Warga melaksanakan kerja bakti lingkungan.</p>
+<p>Kegiatan kerja bakti membersihkan lingkungan desa.</p>
 </div>
 </div>
 
 <!-- LAYANAN -->
 <div id="layanan" class="content">
 <div class="card">
-<h3>Form Pengajuan Surat</h3>
-<input id="nama" placeholder="Nama Lengkap"><br><br>
-<input id="nik" placeholder="4 digit NIK"><br><br>
-<input id="alamat" placeholder="RT/RW"><br><br>
+<h2>Pengajuan Surat Online</h2>
+
+<label>Nama</label>
+<input id="nama" type="text">
+
+<label>NIK (4 digit)</label>
+<input id="nik" type="text">
+
+<label>Alamat</label>
+<input id="alamat" type="text">
+
+<label>Jenis Surat</label>
 <select id="surat">
 <option>Surat Domisili</option>
 <option>SKTM</option>
 <option>Surat Usaha</option>
-</select><br><br>
-<button class="action" onclick="kirimWA()">Kirim via WhatsApp</button>
+</select>
+
+<p>📎 Setelah WhatsApp terbuka, kirim foto KTP & KK</p>
+
+<button class="wa" onclick="kirimWA()">Kirim via WhatsApp</button>
 </div>
 </div>
 
 <!-- GALERI -->
 <div id="galeri" class="content">
 <div class="card">
-<h3>Galeri Desa</h3>
+<h2>Galeri Desa</h2>
 <div class="galeri">
-<img src="https://via.placeholder.com/300">
-<img src="https://via.placeholder.com/300">
+<img src="https://via.placeholder.com/300x200">
+<img src="https://via.placeholder.com/300x200">
+<img src="https://via.placeholder.com/300x200">
 </div>
 </div>
 </div>
@@ -194,23 +243,29 @@ footer{
 <!-- KONTAK -->
 <div id="kontak" class="content">
 <div class="card">
-<h3>Kontak Desa</h3>
-<a href="https://wa.me/6283177390009" target="_blank">Chat WhatsApp Desa</a>
+<h2>Kontak Resmi</h2>
+<p>📍 Kantor Desa Bojenwetan</p>
+<p>📞 WhatsApp: 0831-7739-0009</p>
 </div>
 </div>
 
-<footer>© 2025 Desa Bojenwetan</footer>
+<footer>
+© 2025 Pemerintah Desa Bojenwetan
+</footer>
 
 <script>
-function showPage(id,btn){
+function showPage(id,el){
 document.querySelectorAll('.content').forEach(c=>c.classList.remove('active'));
 document.getElementById(id).classList.add('active');
+
 document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
+el.classList.add('active');
 }
 
 function kirimWA(){
-let pesan=`Pengajuan Surat\nNama:${nama.value}\nNIK:${nik.value}\nAlamat:${alamat.value}\nSurat:${surat.value}`;
+let n=nama.value,a=alamat.value,k=nik.value,s=surat.value;
+if(!n||!a||!k){alert("Lengkapi data");return;}
+let pesan=`PENGAJUAN SURAT\nNama:${n}\nNIK:****${k}\nAlamat:${a}\nJenis:${s}\n\nMohon kirim foto KTP & KK`;
 window.open("https://wa.me/6283177390009?text="+encodeURIComponent(pesan));
 }
 </script>

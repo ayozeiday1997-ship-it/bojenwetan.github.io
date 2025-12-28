@@ -6,319 +6,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
+body{
     font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f6f8;
-}
-header {
-    background: #0d6efd;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(90deg, #0d6efd, #0b5ed7);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    margin:0;
+    background:#f4f6f8;
 }
 
-nav button {
-    border: none;
-    background: transparent;
-    padding: 14px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    transition: all 0.3s ease;
+/* HEADER */
+header{
+    background:#0b5ed7;
+    color:#fff;
+    padding:20px 10px;
+    text-align:center;
 }
 
-nav button:hover {
-    background: rgba(255,255,255,0.2);
-    border-radius: 6px;
+/* MENU PEMDA */
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:#ffffff;
+    box-shadow:0 3px 6px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav button{
+    border:none;
+    background:none;
+    padding:14px 16px;
+    font-size:14px;
+    font-weight:600;
+    color:#0b5ed7;
+    cursor:pointer;
+}
+nav button:hover,
+nav button.active{
+    background:#0b5ed7;
+    color:#fff;
+    border-radius:6px;
 }
 
-nav button.active-menu {
-    background: #ffffff;
-    color: #0d6efd;
-    border-radius: 6px;
-}
-.content {
-    padding: 20px;
-    display: none;
-}
-.content.active {
-    display: block;
-}
-.card {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-button {
-    width: 100%;
-    padding: 12px;
-    background: #25d366;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
-button:hover {
-    background: #1ebe5d;
-}
-.wa-btn {
-    display: inline-block;
-    background: #25d366;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-.berita small {
-    color: #777;
-}
-.galeri {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-}
-.galeri img {
-    width: 100%;
-    border-radius: 8px;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 13px;
-    color: #777;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>Website Resmi Desa Bojenwetan</h1>
-<p>Informasi, Berita & Layanan Publik Desa</p>
-</header>
-
-<nav>
-<button onclick="showPage('home')">Profil Desa</button>
-<button onclick="showPage('berita')">Berita</button>
-<button onclick="showPage('layanan')">Layanan</button>
-<button onclick="showPage('galeri')">Galeri</button>
-<button onclick="showPage('kontak')">Kontak</button>
-</nav>
-
-<!-- PROFIL DESA -->
-<div id="profil" class="content">
-
-    <div class="card">
-        <h2>🏡 Profil Desa Bojenwetan</h2>
-
-        <div class="profil-grid">
-
-            <div class="profil-box">
-                <h3>📍 Gambaran Umum</h3>
-                <p>
-                    Desa Bojenwetan merupakan desa yang mengedepankan nilai
-                    gotong royong, transparansi, dan pelayanan publik berbasis digital.
-                </p>
-            </div>
-
-            <div class="profil-box">
-                <h3>🎯 Visi Desa</h3>
-                <p>
-                    Terwujudnya Desa Bojenwetan yang maju, mandiri, dan sejahtera
-                    melalui tata kelola pemerintahan yang baik.
-                </p>
-            </div>
-
-            <div class="profil-box">
-                <h3>📌 Misi Desa</h3>
-                <ol>
-                    <li>Meningkatkan kualitas pelayanan masyarakat</li>
-                    <li>Mendorong partisipasi aktif warga</li>
-                    <li>Penguatan sistem pemerintahan desa</li>
-                    <li>Pemanfaatan teknologi informasi desa</li>
-                </ol>
-            </div>
-
-            <div class="profil-box">
-                <h3>👥 Struktur Organisasi</h3>
-                <div class="struktur">
-                    <div>👤 Kepala Desa : ................................</div>
-                    <div>👤 Sekretaris Desa : ................................</div>
-                    <div>👤 Kaur Pemerintahan : ................................</div>
-                    <div>👤 Kaur Keuangan : ................................</div>
-                    <div>👤 Kaur Umum : ................................</div>
-                    <div>👤 Kepala Dusun : ................................</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- BERITA -->
-<div id="berita" class="content">
-<div class="card berita">
-<h3>Kerja Bakti Warga Desa</h3>
-<small>12 Januari 2025</small>
-<p>Warga Desa Bojenwetan melaksanakan kerja bakti membersihkan lingkungan desa.</p>
-</div>
-
-<div class="card berita">
-<h3>Pembagian Bantuan Sosial</h3>
-<small>5 Januari 2025</small>
-<p>Pemerintah desa menyalurkan bantuan sosial kepada warga yang membutuhkan.</p>
-</div>
-</div>
-
-<!-- LAYANAN -->
-<div id="layanan" class="content">
-<div class="card">
-<h2>Layanan Surat Desa</h2>
-<ul>
-<li>Surat Domisili</li>
-<li>Surat Keterangan Tidak Mampu (SKTM)</li>
-<li>Surat Keterangan Usaha</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>Form Pengajuan Surat</h2>
-
-<label>Nama Lengkap</label>
-<input type="text" id="nama" placeholder="Nama Lengkap">
-
-<label>NIK (4 digit terakhir)</label>
-<input type="text" id="nik" placeholder="Contoh: 1234">
-
-<label>Alamat</label>
-<input type="text" id="alamat" placeholder="RT/RW">
-
-<label>Jenis Surat</label>
-<select id="surat">
-<option>Surat Domisili</option>
-<option>SKTM</option>
-<option>Surat Usaha</option>
-</select>
-
-<p style="font-size:14px;color:#555;">
-📎 Setelah klik kirim, WhatsApp akan terbuka.<br>
-Silakan upload Foto KTP & Kartu Keluarga.
-</p>
-
-<button type="button" onclick="kirimWA()">📤 Kirim & Upload via WhatsApp</button>
-</div>
-</div>
-
-<!-- GALERI -->
-<div id="profil" class="content">
-
-    <div class="card">
-        <h2>🏡 Profil Desa Bojenwetan</h2>
-
-        <div class="profil-grid">
-
-            <div class="profil-box">
-                <h3>📍 Gambaran Umum</h3>
-                <p>
-                    Desa Bojenwetan merupakan desa yang mengedepankan nilai
-                    gotong royong, transparansi, dan pelayanan publik berbasis digital.
-                </p>
-            </div>
-
-            <div class="profil-box">
-                <h3>🎯 Visi Desa</h3>
-                <p>
-                    Terwujudnya Desa Bojenwetan yang maju, mandiri, dan sejahtera
-                    melalui tata kelola pemerintahan yang baik.
-                </p>
-            </div>
-
-            <div class="profil-box">
-                <h3>📌 Misi Desa</h3>
-                <ol>
-                    <li>Meningkatkan kualitas pelayanan masyarakat</li>
-                    <li>Mendorong partisipasi aktif warga</li>
-                    <li>Penguatan sistem pemerintahan desa</li>
-                    <li>Pemanfaatan teknologi informasi desa</li>
-                </ol>
-            </div>
-
-            <div class="profil-box">
-                <h3>👥 Struktur Organisasi</h3>
-                <div class="struktur">
-                    <div>👤 Kepala Desa : ................................</div>
-                    <div>👤 Sekretaris Desa : ................................</div>
-                    <div>👤 Kaur Pemerintahan : ................................</div>
-                    <div>👤 Kaur Keuangan : ................................</div>
-                    <div>👤 Kaur Umum : ................................</div>
-                    <div>👤 Kepala Dusun : ................................</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-<!-- KONTAK -->
-<div id="kontak" class="content">
-<div class="card">
-<h2>Kontak Desa</h2>
-<a class="wa-btn" href="https://wa.me/6283177390009" target="_blank">
-💬 Chat WhatsApp Desa
-</a>
-<p>Jam Pelayanan:<br>Senin – Jumat | 08.00 – 16.00</p>
-</div>
-</div>
-
-<footer>© 2025 Desa Bojenwetan</footer>
-
-<script>
-function showPage(pageId) {
-    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-    document.getElementById(pageId).classList.add('active');
-}
-
-function kirimWA() {
-    const nama = document.getElementById("nama").value.trim();
-    const nik = document.getElementById("nik").value.trim();
-    const alamat = document.getElementById("alamat").value.trim();
-    const surat = document.getElementById("surat").value;
-
-    if (!nama || !nik || !alamat) {
-        alert("Mohon lengkapi data");
-        return;
-    }
-
-    const pesan =
-`PENGAJUAN SURAT
-Nama: ${nama}
-NIK: ****${nik}
-Alamat: ${alamat}
-Jenis Surat: ${surat}`;
-
-    const url = "https://wa.me/6283177390009?text=" + encodeURIComponent(pesan);
-    window.open(url, "_blank");
-}
-</script>
-
-</body>
-</html>
+/* CONTENT */
+.content{display:none;padding:20px;}
+.content.active{display:b

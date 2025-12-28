@@ -1,237 +1,138 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Desa Bojenwetan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Desa Bojenwetan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f8;
-        }
-        header {
-            background: #0d6efd;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav button {
-            border: none;
-            background: none;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-        nav button:hover {
-            background: #f0f0f0;
-        }
-        .content {
-            padding: 20px;
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-        .wa-btn {
-            display: inline-block;
-            background: #25d366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .berita h3 {
-            margin-bottom: 5px;
-        }
-        .berita small {
-            color: #777;
-        }
-        .galeri {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-        }
-        .galeri img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            color: #777;
-        }
-    </style>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+}
+header {
+    background: #0d6efd;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav button {
+    border: none;
+    background: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+nav button:hover {
+    background: #f0f0f0;
+}
+.content {
+    padding: 20px;
+    display: none;
+}
+.content.active {
+    display: block;
+}
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1ebe5d;
+}
+.wa-btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+.galeri img {
+    width: 100%;
+    border-radius: 8px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Website Resmi Desa Bojenwetan</h1>
-    <p>Informasi, Berita & Layanan Publik Desa</p>
+<h1>Website Resmi Desa Bojenwetan</h1>
+<p>Informasi, Berita & Layanan Publik Desa</p>
 </header>
 
 <nav>
-    <button onclick="showPage('home')">Beranda</button>
-    <button onclick="showPage('berita')">Berita</button>
-    <button onclick="showPage('layanan')">Layanan</button>
-    <button onclick="showPage('galeri')">Galeri</button>
-    <button onclick="showPage('kontak')">Kontak</button>
+<button onclick="showPage('home')">Beranda</button>
+<button onclick="showPage('berita')">Berita</button>
+<button onclick="showPage('layanan')">Layanan</button>
+<button onclick="showPage('galeri')">Galeri</button>
+<button onclick="showPage('kontak')">Kontak</button>
 </nav>
 
-<!-- BERANDA -->
 <div id="home" class="content active">
-    <div class="card">
-        <h2>Selamat Datang</h2>
-        <p>Website resmi Desa Bojenwetan sebagai pusat informasi, berita, dan layanan publik.</p>
-    </div>
+<div class="card">
+<h2>Selamat Datang</h2>
+<p>Website resmi Desa Bojenwetan sebagai pusat informasi dan layanan publik.</p>
+</div>
 </div>
 
-<!-- BERITA -->
 <div id="berita" class="content">
-    <div class="card berita">
-        <h3>Kerja Bakti Warga Desa</h3>
-        <small>12 Januari 2025</small>
-        <p>Warga Desa Bojenwetan melaksanakan kerja bakti membersihkan lingkungan desa.</p>
-    </div>
-
-    <div class="card berita">
-        <h3>Pembagian Bantuan Sosial</h3>
-        <small>5 Januari 2025</small>
-        <p>Pemerintah desa menyalurkan bantuan sosial kepada warga yang membutuhkan.
-        BLT Kesra menjadi bahan empuk wartawan</p>
-    </div>
+<div class="card">
+<h3>Kerja Bakti Warga Desa</h3>
+<small>12 Januari 2025</small>
+<p>Warga melaksanakan kerja bakti membersihkan lingkungan.</p>
+</div>
 </div>
 
-<!-- LAYANAN -->
 <div id="layanan" class="content">
-    <div class="card">
-        <h2>Layanan Surat Desa</h2>
-        <ul>
-            <li>Surat Domisili</li>
-            <li>Surat Keterangan Tidak Mampu (SKTM)</li>
-            <li>Surat Keterangan Usaha</li>
-        </ul>
-    </div>
+<div class="card">
+<h2>Form Pengajuan Surat</h2>
 
-    <div class="card">
-        <h2>Form Pengajuan Surat</h2>
+<label>Nama Lengkap</label>
+<input type="text" id="nama">
 
-        <label>Nama Lengkap</label><br>
-        <input type="text" id="nama" placeholder="Nama Lengkap"><br><br>
+<label>NIK (4 digit terakhir)</label>
+<input type="text" id="nik">
 
-        <label>NIK (4 digit terakhir)</label><br>
-        <input type="text" id="nik" placeholder="Contoh: 1234"><br><br>
+<label>Alamat</label>
+<input type="text" id="alamat">
 
-        <label>Alamat</label><br>
-        <input type="text" id="alamat" placeholder="RT/RW"><br><br>
-
-        <label>Jenis Surat</label><br>
-        <select id="surat">
-            <option>Surat Domisili</option>
-            <option>SKTM</option>
-            <option>Surat Usaha</option>
-        </select><br><br>
-
-        <p style="font-size:14px;color:#555;">
-            📎 Setelah klik kirim, WhatsApp akan terbuka.<br>
-            Silakan upload:
-            <br>• Foto KTP
-            <br>• Foto Kartu Keluarga
-        </p>
-
-        <button type="button" onclick="kirimWA()" style="cursor:pointer;">
-📤 Kirim & Upload via WhatsApp
-</button>
-
-    </div>
-</div>
-
-
-<!-- GALERI -->
-<div id="galeri" class="content">
-    <div class="card">
-        <h2>Galeri Foto Desa</h2>
-        <div class="galeri">
-            <img src="WhatsApp Image 2025-12-11 at 08.53.36 (1).jpeg">
-            <img src="https://via.placeholder.com/300x200?text=Balai+Desa">
-            <img src="https://via.placeholder.com/300x200?text=Kerja+Bakti">
-            <img src="https://via.placeholder.com/300x200?text=Acara+Warga">
-        </div>
-        <p style="margin-top:10px;font-size:14px;color:#666;">
-            *Foto dapat diganti sesuai dokumentasi desa
-        </p>
-    </div>
-</div>
-
-<!-- KONTAK -->
-<div id="kontak" class="content">
-    <div class="card">
-        <h2>Kontak Desa</h2>
-        <a class="wa-btn" href="https://wa.me/6283177390009" target="_blank">
-            💬 Chat WhatsApp Desa
-        </a>
-        <p style="margin-top:10px;">
-            Jam Pelayanan:<br>
-            Senin – Jumat | 08.00 – 16.00
-        </p>
-    </div>
-</div>
-
-<footer>
-    © 2025 Desa Bojenwetan
-</footer>
-
-<script>
-    function showPage(pageId) {
-        const pages = document.querySelectorAll('.content');
-        pages.forEach(page => page.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-    }
-</script>
-<script>
-<script>
-function kirimWA() {
-    const nama = document.getElementById("nama").value.trim();
-    const nik = document.getElementById("nik").value.trim();
-    const alamat = document.getElementById("alamat").value.trim();
-    const surat = document.getElementById("surat").value;
-
-    if (!nama || !nik || !alamat) {
-        alert("Mohon lengkapi data");
-        return;
-    }
-
-    const pesan =
-`PENGAJUAN SURAT
-Nama: ${nama}
-NIK: ****${nik}
-Alamat: ${alamat}
-Jenis Surat: ${surat}`;
-
-    const nomorBot = "6283177390009"; // NOMOR BOT DESA
-    const url = `https://wa.me/${nomorBot}?text=${encodeURIComponent(pesan)}`;
-
-    window.open(url, "_blank");
-}
-</script>
-
-
-</body>
-</html>
+<label>Jenis Surat</label>
+<select id="surat">
+<option>Surat Domisili</option>
+<option>SKTM</option>
+<option>Surat Usaha</option>
+</
